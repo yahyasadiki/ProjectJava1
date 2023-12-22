@@ -1,10 +1,6 @@
 package Class;
 
-//2.2. Gestion des Utilisateurs
-//Enregistrement des utilisateurs avec leurs informations personnelles.
-//Possibilité de définir des rôles d'accès (membre, bibliothécaire, administrateur).
-//Modification des informations des utilisateurs.
-//Suppression d'un utilisateur de la base de données.
+
 
 public class Utilisateur {
     private int id;

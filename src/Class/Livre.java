@@ -1,9 +1,6 @@
 package Class;
 
-//2.1.Gestion des Livres
-//Ajout d'un livre avec des détails tels que titre, auteur, année de publication, genre, etc.
-//Modification des informations d'un livre existant.
-//Suppression d'un livre de la bibliothèque.
+
 public class Livre {
     private String titre;
     private String auteur;
