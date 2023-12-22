@@ -31,15 +31,9 @@ public class Emprunts {
     public void rendreLivre(Livre livre, Date dateRetour) {
         Calendar dRetour = Calendar.getInstance();
         dRetour.setTime(dateRetour);
-
-        System.out.println("Date de retour effective: " + dRetour.getTime());
-        System.out.println("Date de retour prévue: " + dateRetourPrevue);
-
-        if (dRetour.after(dateRetourPrevue)) {
-            double penalite = (double) (dRetour.getTimeInMillis() - dateRetourPrevue.getTime()) / (1000 * 60 * 60 * 24) * 5;
-            System.out.println("Vous avez dépassé la date de retour, payez la pénalité (5dh/jour) : " + penalite + " DHS");
-        } else {
-            System.out.println("Vous avez rendu le livre à temps");
+        int a = (int) dRetour.get(Calendar.DAY_OF_MONTH) - dateRetourPrevue.getDate();
+        if(a>0){
+            System.out.println("non rendu à temps, payer une amendes (5dh/jrs) = "+a*5+"dh");
         }
 
         this.dateRetourEffective = dateRetour;

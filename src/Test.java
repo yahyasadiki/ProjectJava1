@@ -16,14 +16,12 @@ public class Test {
         try {
             SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
             Date dateEmprunt = dateFormat.parse("20/11/2020");
-            Date dateRetourPrevue = dateFormat.parse("23/11/2020");
+            Date dateRetourPrevue = dateFormat.parse("20/11/2020");
 
             Emprunts e1 = new Emprunts(u1, tabLivres, dateEmprunt, dateRetourPrevue);
 
             e1.emprunterLivre(l1);
-
-            // Simulate a penalty case by setting a return date after the expected return date
-            e1.rendreLivre(l1, dateFormat.parse("26/12/2020"));
+            e1.rendreLivre(l1, dateFormat.parse("1/12/2020"));
         } catch (ParseException e) {
             e.printStackTrace();
         }
