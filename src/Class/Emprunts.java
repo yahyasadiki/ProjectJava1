@@ -10,6 +10,9 @@ public class Emprunts {
     private Date dateRetourPrevue;
     private Date dateRetourEffective;
 
+    private ArrayList<Utilisateur> statistiquesUtilisateur;
+    private ArrayList<Livre> statistiquesLivre;
+
     public Emprunts(Utilisateur Utilisateur, ArrayList<Livre> livresEmpruntes, Date dateEmprunt, Date dateRetourPrevue) {
         this.Utilisateur = Utilisateur;
         this.livresEmpruntes = livresEmpruntes;

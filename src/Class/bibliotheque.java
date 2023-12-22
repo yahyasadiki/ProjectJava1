@@ -3,9 +3,13 @@ package Class;
 import java.util.ArrayList;
 
 public class bibliotheque {
-    ArrayList<Livre> livres;
+    private ArrayList<Livre> livres;
+    private String nom;
+    private String adresse;
 
-    public bibliotheque() {
+    public bibliotheque(String nom, String adresse) {
+        this.nom = nom;
+        this.adresse = adresse;
         livres = new ArrayList<Livre>();
     }
 
