@@ -6,12 +6,17 @@ public class Livre {
     private String auteur;
     private int anneeDePublication;
     private String genre;
+    private int nbrEmprunts;
 
     public Livre(String titre, String auteur, int anneeDePublication, String genre) {
         this.titre = titre;
         this.auteur = auteur;
         this.anneeDePublication = anneeDePublication;
         this.genre = genre;
+    }
+
+    public void incrementerNbrEmprunts(){
+        nbrEmprunts++;
     }
 
     @Override
@@ -21,6 +26,7 @@ public class Livre {
                 ", auteur='" + auteur + '\'' +
                 ", anneeDePublication=" + anneeDePublication +
                 ", genre='" + genre + '\'' +
+                ", nbrEmprunts=" + nbrEmprunts +
                 '}';
     }
 

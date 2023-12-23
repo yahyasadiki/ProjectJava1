@@ -5,23 +5,23 @@ import java.util.Date;
 
 public class Emprunts {
     private Utilisateur Utilisateur;
-    private ArrayList<Livre> livresEmpruntes;
+    private Livre livresEmpruntes;
     private Date dateEmprunt;
     private Date dateRetourPrevue;
     private Date dateRetourEffective;
+    private boolean statutEmprunt;
+
 
     private ArrayList<Utilisateur> statistiquesUtilisateur;
     private ArrayList<Livre> statistiquesLivre;
 
-    public Emprunts(Utilisateur Utilisateur, ArrayList<Livre> livresEmpruntes, Date dateEmprunt, Date dateRetourPrevue) {
+    public Emprunts(Utilisateur Utilisateur, Livre livresEmpruntes, Date dateEmprunt, Date dateRetourPrevue) {
         this.Utilisateur = Utilisateur;
         this.livresEmpruntes = livresEmpruntes;
         this.dateEmprunt = dateEmprunt;
         this.dateRetourPrevue = dateRetourPrevue;
-    }
-
-    public void emprunterLivre(Livre livre) {
-        livresEmpruntes.add(livre);
+        livresEmpruntes.incrementerNbrEmprunts();
+        this.statutEmprunt = true;
     }
 
     public void prolongerEmprunt(int joursAjouter) {
@@ -38,25 +38,21 @@ public class Emprunts {
         if(a>0){
             System.out.println("non rendu à temps, payer une amendes (5dh/jrs) = "+a*5+"dh");
         }
-
         this.dateRetourEffective = dateRetour;
-
-        livresEmpruntes.remove(livre);
+        statutEmprunt = false;
     }
-
-    public ArrayList<Livre> consulterHistoriqueEmprunts(){
-        return livresEmpruntes;
-    }
-
 
     @Override
     public String toString() {
         return "Emprunts{" +
-                "idUtilisateur=" + Utilisateur +
+                "Utilisateur=" + Utilisateur +
                 ", livresEmpruntes=" + livresEmpruntes +
-                ", dateEmprunt='" + dateEmprunt + '\'' +
+                ", dateEmprunt=" + dateEmprunt +
                 ", dateRetourPrevue=" + dateRetourPrevue +
-                '}';}
+                ", dateRetourEffective=" + dateRetourEffective +
+                ", statutEmprunt=" + statutEmprunt +
+                '}'; }
+
     public void afficherEmprunts() {
         System.out.println(this.toString());
     }

@@ -4,21 +4,21 @@ package Class;
 public class Utilisateur {
     private int id;
     private String nom;
-    private String age;
+    private int age;
     private Role role;
 
     public enum Role {
         Membre, Bibliothecaire, Administrateur
     }
 
-    public Utilisateur(int id, String nom, String age, Role role) {
+    public Utilisateur(int id, String nom, int age, Role role) {
         this.id = id;
         this.nom = nom;
         this.age = age;
         this.role = role;
     }
 
-    public void modifiertilisateur(Utilisateur utilisateur, String nom, String age, Role role) {
+    public void modifiertilisateur(Utilisateur utilisateur, String nom, int age, Role role) {
         this.id = id;
         this.nom = nom;
         this.age = age;
@@ -28,7 +28,7 @@ public class Utilisateur {
     public void supprimerutilisateur(Utilisateur utilisateur) {
         this.id = 0;
         this.nom = null;
-        this.age = null;
+        this.age = 0;
         this.role = null;
     }
 
@@ -48,11 +48,11 @@ public class Utilisateur {
         this.nom = nom;
     }
 
-    public String age() {
+    public int age() {
         return age;
     }
 
-    public void setAge(String age) {
+    public void setAge(int age) {
         this.age = age;
     }
 
