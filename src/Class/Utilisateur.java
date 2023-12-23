@@ -1,7 +1,6 @@
 package Class;
 
 
-
 public class Utilisateur {
     private int id;
     private String nom;
