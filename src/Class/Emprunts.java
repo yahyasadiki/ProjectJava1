@@ -12,8 +12,6 @@ public class Emprunts {
     private boolean statutEmprunt;
 
 
-    private ArrayList<Utilisateur> statistiquesUtilisateur;
-    private ArrayList<Livre> statistiquesLivre;
 
     public Emprunts(Utilisateur Utilisateur, Livre livresEmpruntes, Date dateEmprunt, Date dateRetourPrevue) {
         this.Utilisateur = Utilisateur;
